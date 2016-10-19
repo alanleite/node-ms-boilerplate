@@ -1,2 +1,2 @@
-# microservice-boilerplate
+# node-ms-boilerplate
 A microservice boilerplate using Hapi, Bookshelf, Rabbot etc...
