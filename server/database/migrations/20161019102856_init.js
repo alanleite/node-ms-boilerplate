@@ -2,7 +2,7 @@
 exports.up = function (knex, Promise) {
     return Promise.all([
         knex.schema.createTable('customers', (table) => {
-            table.increments()
+            table.increments().primary()
             table.string('sid', 14).notNullable()
             table.string('first_name').notNullable()
             table.string('last_name')
@@ -10,10 +10,15 @@ exports.up = function (knex, Promise) {
             table.string('city')
             table.string('state', 2)
             table.string('postal_code', 20)
-            table.timestamps()
+            table.string('created_by', 14)
+            table.string('updated_by', 14)
+            table.string('deleted_by', 14)
+            table.dateTime('created_at')
+            table.dateTime('updated_at')
+            table.dateTime('deleted_at')
         }),
         knex.schema.createTable('orders', (table) => {
-            table.increments()
+            table.increments().primary()
             table.string('sid', 14).notNullable()
             table.integer('customer_id')
                 .notNullable()
@@ -26,7 +31,12 @@ exports.up = function (knex, Promise) {
             table.string('ship_city')
             table.string('ship_state', 2)
             table.string('ship_postal_code', 20)
-            table.timestamps()
+            table.string('created_by', 14)
+            table.string('updated_by', 14)
+            table.string('deleted_by', 14)
+            table.dateTime('created_at')
+            table.dateTime('updated_at')
+            table.dateTime('deleted_at')
         })
     ])
 };
