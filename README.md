@@ -1,2 +1,4 @@
 # node-ms-boilerplate
-A microservice boilerplate using Hapi, Bookshelf, Rabbot etc...
+A Nodejs microservice boilerplate using Hapi, Bookshelf, Redis and Rabbit
+
+## Environment variables

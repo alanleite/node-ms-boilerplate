@@ -1,6 +1,7 @@
 
 exports.up = function (knex, Promise) {
     return Promise.all([
+
         knex.schema.createTable('customers', (table) => {
             table.increments().primary()
             table.string('sid', 14).notNullable()
@@ -17,6 +18,7 @@ exports.up = function (knex, Promise) {
             table.dateTime('updated_at')
             table.dateTime('deleted_at')
         }),
+
         knex.schema.createTable('orders', (table) => {
             table.increments().primary()
             table.string('sid', 14).notNullable()
@@ -38,6 +40,7 @@ exports.up = function (knex, Promise) {
             table.dateTime('updated_at')
             table.dateTime('deleted_at')
         })
+        
     ])
 };
 

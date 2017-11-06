@@ -1,7 +1,7 @@
 const Joi = require('joi')
 
 module.exports.getOne = function () {
-    return: {
+    return {
         params: {
             sid: Joi.string().min(7).max(14).required()
         }
@@ -9,7 +9,7 @@ module.exports.getOne = function () {
 }
 
 module.exports.create = function () {
-    return: {
+    return {
         payload: {
             first_name: Joi.string().required(),
             last_name: Joi.string(),
@@ -22,7 +22,7 @@ module.exports.create = function () {
 }
 
 module.exports.update = function () {
-    return: {
+    return {
         params: {
             sid: Joi.string().min(7).max(14).required()
         },
@@ -38,7 +38,7 @@ module.exports.update = function () {
 }
 
 module.exports.delete = function () {
-    return: {
+    return {
         params: {
             sid: Joi.string().min(7).max(14).required()
         }

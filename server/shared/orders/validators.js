@@ -1,7 +1,7 @@
 const Joi = require('joi')
 
 module.exports.getOne = function () {
-    return: {
+    return {
         params: {
             sid: Joi.string().min(7).max(14).required()
         }
@@ -9,7 +9,7 @@ module.exports.getOne = function () {
 }
 
 module.exports.getMany = function () {
-    return: {
+    return {
         params: {
             customer_sid: Joi.string().min(7).max(14).required()
         }
@@ -17,13 +17,13 @@ module.exports.getMany = function () {
 }
 
 module.exports.create = function () {
-    return: {
+    return {
         params: {
             customer_sid: Joi.string().min(7).max(14).required()
         },
         payload: {
-            order_date: Joi.date()
-            shippedDate: Joi.date()
+            order_date: Joi.date(),
+            shippedDate: Joi.date(),
             ship_address: Joi.string(),
             ship_city: Joi.string(),
             ship_state: Joi.string().max(2),
@@ -33,13 +33,13 @@ module.exports.create = function () {
 }
 
 module.exports.update = function () {
-    return: {
+    return {
         params: {
             sid: Joi.string().min(7).max(14).required()
         },
         payload: {
-            order_date: Joi.date()
-            shippedDate: Joi.date()
+            order_date: Joi.date(),
+            shippedDate: Joi.date(),
             ship_address: Joi.string(),
             ship_city: Joi.string(),
             ship_state: Joi.string().max(2),
@@ -49,7 +49,7 @@ module.exports.update = function () {
 }
 
 module.exports.delete = function () {
-    return: {
+    return {
         params: {
             sid: Joi.string().min(7).max(14).required()
         }

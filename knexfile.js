@@ -1,5 +1,5 @@
 module.exports = {
-    development2: {
+    development: {
         client: process.env.DB_CLIENT,
         connection: {
             host: process.env.DB_HOST,

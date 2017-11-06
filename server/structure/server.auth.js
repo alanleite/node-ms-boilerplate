@@ -15,6 +15,7 @@ const validate = function (decoded, request, callback) {
 }
 
 module.exports = function (server) {
+
     server.auth.strategy('jwt', 'jwt', {
         key: process.env.JWT_SECRET,
         validateFunc: validate,
@@ -25,4 +26,5 @@ module.exports = function (server) {
     })
 
     server.auth.default('jwt')
+    
 }
